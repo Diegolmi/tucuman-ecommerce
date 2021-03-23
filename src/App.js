@@ -1,57 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import 'antd/dist/antd.css';
+import { Layout, Breadcrumb } from 'antd';
 import './App.css';
+import Productos from './Components/Productos';
+import TopMenu from './Components/TopMenu';
+import Carrousel from './Components/Carrousel';
 
-function App() {
+const { Header, Content, Footer } = Layout;
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Layout className='layout' style={{height:"100vh"}}>
+      <Header>
+        <div className='logo' />
+        <TopMenu />
+      </Header>
+      <Content style={{ padding: '0 50px' }}>
+        {/* <Breadcrumb style={{ margin: '16px 0' }}>
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>List</Breadcrumb.Item>
+          <Breadcrumb.Item>App</Breadcrumb.Item>
+        </Breadcrumb> */}
+        <Carrousel />
+        <Productos />
+        <div className='site-layout-content'>Content</div>
+      </Content>
+      <Footer style={{ textAlign: 'center' }}>
+      
+      </Footer>
+    </Layout>
   );
 }
 
