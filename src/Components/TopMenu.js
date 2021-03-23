@@ -14,17 +14,22 @@ const TopMenu = () => {
   const badgeCount = carrito.length;
 
   return (
-    <div>
       <>
-        <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']}>
-          <Menu.Item key='1'>
+        <Menu style={{textAlign: 'end'}} theme='dark' mode='horizontal' defaultSelectedKeys={['1']}>
+          <Menu.Item key='1' style={{ color: 'white', fontSize: 20, marginRight: 5 }}>
+            Inicio
+          </Menu.Item>
+          <Menu.Item key='2'>
             <Badge count={badgeCount}>
               <ShoppingCartOutlined
-                style={{ color: 'white' }}
+                style={{ color: 'white', fontSize: 20 }}
                 onClick={toggleSlider}
                
               />
             </Badge>
+          </Menu.Item>
+          <Menu.Item key='3' style={{ color: 'white', fontSize: 20, marginLeft: 5 }}>
+            Login
           </Menu.Item>
         </Menu>
         {/* <Carrousel /> */}
@@ -40,7 +45,6 @@ const TopMenu = () => {
          <CarritoCompras />
         </Drawer>
       </>
-    </div>
   );
 };
 
